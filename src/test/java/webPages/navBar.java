@@ -1,5 +1,6 @@
 package webPages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -13,20 +14,16 @@ public class navBar {
         PageFactory.initElements(driver,this);
     }
 
-    @FindBy(id="ico-register")
-    WebElement navBarRegister;
-
-    @FindBy(id="ico-login")
-    WebElement navBarLogin;
-
-    @FindBy(id="ico-wishlist")
+    @FindBy(className="ico-wishlist")
     WebElement navBarWishlist;
 
-    @FindBy(id="ico-cart")
+    @FindBy(className="ico-cart")
     WebElement navBarCart;
 
-    public WebElement navRegisterPOM(){return navBarRegister;}
-    public WebElement navLoginPOM(){return navBarLogin;}
+    public WebElement navRegisterPOM(){
+        return driver.findElements(By.cssSelector("div.header-links li a")).get(1);}
+    public WebElement navLoginPOM(){
+        return driver.findElements(By.cssSelector("div.header-links li a")).get(1); }
     public WebElement navWishlistPOM(){return navBarWishlist;}
     public WebElement navCartPOM(){return navBarCart;}
 }
