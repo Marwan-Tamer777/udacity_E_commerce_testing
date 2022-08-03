@@ -16,22 +16,21 @@ Feature: user product actions and searching actions
 #
 #    Then check for any item's currency "€"
 
-  Scenario: SC6- Logged user "test@example.com" "password" could select different Categories
-    Given logged User "test@example.com" "password" navigates to home page
+#  Scenario: SC6- Logged user "test@example.com" "password" could select different Categories
+#    Given logged User "test@example.com" "password" navigates to home page
+#
+#    When user hovers on category "Electronics"
+#    And clicks on subcategory "Cell Phones"
+# #   When user clicks on category "Computers"
+#    Then check for current category title "Cell Phones"
 
-    When user hovers on category "Electronics"
-    And clicks on subcategory "Cell Phones"
- #   When user clicks on category "Computers"
-    Then check for current category title "Cell Phones"
+  Scenario: SC7- Logged user "test@example.com" "password" could filter with color
+    Given logged User "test@example.com" "password" navigates to shoes page
 
-#  Scenario: SC7- Logged user "test@example.com" "password" could filter with color
-#    Given logged User "test@example.com" "password" navigates to shoes page
-#
-#    When user clicks on color selector "Red" radio buttons
-#    And user clicks on first item search option
-#
-#    Then check for available color "Red"
-#
+    When user clicks on color selector "Red" radio buttons
+    And user clicks on first item search option
+
+    Then check for available color "Red"
 #  Scenario: SC8- Logged user "test@example.com" "password" could select different tags
 #    Given Given logged User "test@example.com" "password" navigates to search page
 #

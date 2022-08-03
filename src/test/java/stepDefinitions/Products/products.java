@@ -22,8 +22,8 @@ public class products {
     WebDriver driver = null;
     SearchPage searchPage = null;
     NavBars navBars = null;
-
     CategoriesPage categoriesPage = null;
+    ProductItemPage productItemPage = null;
 
     @Before
     public void userOpensBrowser(){
@@ -38,6 +38,7 @@ public class products {
         searchPage = new SearchPage(driver);
         navBars = new NavBars(driver);
         categoriesPage = new CategoriesPage(driver);
+        productItemPage = new ProductItemPage(driver);
     }
 
     @After
@@ -88,13 +89,13 @@ public class products {
     }
 
     @When("user hovers on category {string}")
-    public void userHoversOnCategory(String category) throws InterruptedException {
+    public void userHoversOnCategory(String category) {
         Actions action = new Actions(driver);
         action.moveToElement(navBars.searchCategoriesPOM(category)).perform();
     }
 
     @And("clicks on subcategory {string}")
-    public void clicksOnCategoryOrRandomSubcategory(String subCategory) {
+    public void userClicksOnSubcategory(String subCategory) {
         navBars.searchSubCategoriesPOM(subCategory).click();
     }
 
@@ -110,19 +111,28 @@ public class products {
     }
 
     @Given("logged User {string} {string} navigates to shoes page")
-    public void loggedUserNavigatesToShoesPage(String arg0, String arg1) {
+    public void loggedUserNavigatesToShoesPage(String email, String password) {
+        driver.navigate().to("https://demo.nopcommerce.com/login");
+        userRegLog.userEntersValidEmailAndPassword(email,password,driver);
+        driver.navigate().to("https://demo.nopcommerce.com");
+        userHoversOnCategory("Apparel");
+        userClicksOnSubcategory("shoes");
     }
 
     @When("user clicks on color selector {string} radio buttons")
-    public void userClicksOnColorSelectorRadioButtons(String arg0) {
+    public void userClicksOnColorSelectorRadioButtons(String color) {
+        categoriesPage.searchShoeColorsListItem(color).click();
     }
 
     @And("user clicks on first item search option")
-    public void userClicksOnFirstItemSearchOption() {
+    public void userClicksOnFirstItemSearchOption() throws InterruptedException {
+        Thread.sleep(2000);
+        searchPage.searchResultsPOM(0).click();
     }
 
     @Then("check for available color {string}")
-    public void checkForAvailableColor(String arg0) {
+    public void checkForAvailableColor(String color) {
+        Assert.assertTrue("Color is not in the selected element",productItemPage.checkForProductColorRadio(color));
     }
 
     @Given("Given logged User {string} {string} navigates to search page")
