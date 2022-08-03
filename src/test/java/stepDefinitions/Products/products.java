@@ -2,6 +2,7 @@ package stepDefinitions.Products;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import io.cucumber.java.bs.A;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -135,16 +136,15 @@ public class products {
         Assert.assertTrue("Color is not in the selected element",productItemPage.checkForProductColorRadio(color));
     }
 
-    @Given("Given logged User {string} {string} navigates to search page")
-    public void givenLoggedUserNavigatesToSearchPage(String arg0, String arg1) {
-    }
-
     @When("user clicks on tag {string}")
-    public void userClicksOnTag(String arg0) {
+    public void userClicksOnTag(String tag) {
+        searchPage.searchPopularTagsPOM(tag).click();
     }
 
     @Then("check for item tags {string}")
-    public void checkForItemTags(String arg0) {
+    public void checkForItemTags(String tag) {
+        Assert.assertTrue("selected item don't have the selected tag",
+                productItemPage.checkForProductTag(tag));
     }
 
 }
