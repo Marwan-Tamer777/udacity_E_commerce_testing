@@ -1,6 +1,5 @@
 package runners;
 
-
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
@@ -8,11 +7,10 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 
 @CucumberOptions(
-        features = "src/test/java/features/userRegLog.feature",
+        features = "src/test/java/features/products.feature",
 
-        glue = "stepDefinitions.UserRegLog"
+        glue = "stepDefinitions.Products"
 )
 
-
-public class userRegLog {
+public class products {
 }

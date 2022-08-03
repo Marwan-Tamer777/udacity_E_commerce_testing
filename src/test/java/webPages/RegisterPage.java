@@ -8,10 +8,10 @@ import org.openqa.selenium.support.PageFactory;
 /*
     Testing using Assertion using Testng,selenium  with Cucumber as testing framework.
  */
-public class registerPage {
+public class RegisterPage {
     WebDriver driver;
 
-    public registerPage(WebDriver driver){
+    public RegisterPage(WebDriver driver){
         this.driver = driver;
         PageFactory.initElements(driver,this);
     }

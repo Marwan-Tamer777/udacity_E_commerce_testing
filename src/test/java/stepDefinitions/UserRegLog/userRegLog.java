@@ -1,4 +1,4 @@
-package stepDefinitions;
+package stepDefinitions.UserRegLog;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -6,30 +6,28 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.cucumber.java.eo.Se;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import webPages.loginPage;
-import webPages.myAccountPage;
-import webPages.navBar;
-import webPages.registerPage;
+import webPages.LoginPage;
+import webPages.MyAccountPage;
+import webPages.NavBars;
+import webPages.RegisterPage;
 
-import java.security.Key;
-import java.util.Locale;
+import java.sql.Driver;
 
 /*
     Testing using Assertion using Testng,selenium  with Cucumber as testing framework.
  */
 public class userRegLog {
     WebDriver driver = null;
-    webPages.loginPage loginPage = null;
-    webPages.registerPage registerPage = null;
-    webPages.navBar navBar = null;
+    static LoginPage loginPage = null;
+    RegisterPage registerPage = null;
+    NavBars navBars = null;
 
-    webPages.myAccountPage myAccount = null;
+    MyAccountPage myAccount = null;
 
     @Before
     public void userOpensBrowser(){
@@ -41,10 +39,10 @@ public class userRegLog {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
 
-        loginPage = new loginPage(driver);
-        registerPage = new registerPage(driver);
-        navBar = new navBar(driver);
-        myAccount = new myAccountPage(driver);
+        loginPage = new LoginPage(driver);
+        registerPage = new RegisterPage(driver);
+        navBars = new NavBars(driver);
+        myAccount = new MyAccountPage(driver);
     }
 
     @After
@@ -59,6 +57,12 @@ public class userRegLog {
 
     }
 
+    public static void userEntersValidEmailAndPassword(String email, String password, WebDriver driver) {
+        LoginPage log = new LoginPage(driver);
+        log.emailPOM().sendKeys(email);
+        log.passwordPOM().sendKeys(password);
+        log.passwordPOM().sendKeys(Keys.ENTER);
+    }
     @And("user presses enter")
     public void userPressesEnter() {
         driver.findElement(By.tagName("body")).sendKeys(Keys.ENTER);
@@ -100,7 +104,8 @@ public class userRegLog {
 
     @Then("check if logged in")
     public void checkIfLoggedIn() throws InterruptedException {
-        Assert.assertTrue("user is not logged in",navBar.navLoginPOM().getText().contains("Log out"));
+        Thread.sleep(2000);
+        Assert.assertTrue("user is not logged in", navBars.navLoginPOM().getText().contains("Log out"));
     }
 
 
@@ -108,7 +113,7 @@ public class userRegLog {
     public void loggedUserNavigatesToChangePasswordPage(String email, String password) {
         driver.navigate().to("https://demo.nopcommerce.com/customer/changepassword");
 
-        if(driver.getCurrentUrl().contains("https://demo.nopcommerce.com/login?ReturnUrl=%2Fcustomer%2Fchangepassword")){
+        if(driver.getCurrentUrl().contains("https://demo.nopcommerce.com/login")){
             userEntersValidEmailAndPassword(email,password);
         }
 
@@ -124,6 +129,7 @@ public class userRegLog {
 
     @Then("check for valid password change flash message")
     public void checkForValidPasswordChangeFlashMessage() {
+
         Assert.assertTrue("Password did not change",myAccount.responseMessagePOM().getText().contains("Password was changed"));
     }
 }
