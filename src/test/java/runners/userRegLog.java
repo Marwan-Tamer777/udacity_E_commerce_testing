@@ -16,5 +16,5 @@ import org.junit.runner.RunWith;
 )
 
 
-public class AuserRegLog {
+public class userRegLog {
 }
