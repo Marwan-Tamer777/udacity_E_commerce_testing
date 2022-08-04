@@ -3,6 +3,7 @@ package webPages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
@@ -13,6 +14,26 @@ public class ProductItemPage {
     public ProductItemPage(WebDriver driver){
         this.driver = driver;
         PageFactory.initElements(driver,this);
+    }
+
+    @FindBy(css = "div.add-to-cart button")
+    WebElement addToCartButton;
+
+    @FindBy(css = "div.overview-buttons .add-to-wishlist-button")
+    WebElement addToWishListButton;
+
+    @FindBy(css = "div.overview-buttons .add-to-compare-list-button")
+    WebElement addToCompareButton;
+
+    public WebElement addToCartButtonPOM(){
+        return addToCartButton;
+    }
+
+    public WebElement addToWishListButtonPOM(){
+        return addToWishListButton;
+    }
+    public WebElement addToCompareButtonPOM(){
+        return addToCompareButton;
     }
 
     public List<WebElement> productColourOptions(){

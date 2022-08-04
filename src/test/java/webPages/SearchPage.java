@@ -73,4 +73,21 @@ public class SearchPage {
         return popularTagsPOM().get(index);
     }
 
+    public WebElement searchResultGetShoppingCartButtonPOM(int index){
+        System.out.print(
+                "FSAFASFAFS " +
+                driver.findElement(By.cssSelector(".product-grid > .item-grid > .item-box:nth-child("+(index+1)+") .details > div.add-info > div.buttons > button:nth-child(1)"))
+                + "   " +
+                driver.findElement(By.cssSelector(".product-grid > .item-grid > .item-box:nth-child("+(index+1)+") .details > div.add-info > div.buttons > button:nth-child(1)")).getText()
+        );
+        return driver.findElement(By.cssSelector(".product-grid > .item-grid > .item-box:nth-child("+(index+1)+") .details > div.add-info > div.buttons > button:nth-child(1)"));
+    }
+
+    public WebElement searchResultGetCompareListButtonPOM(int index){
+        return driver.findElement(By.cssSelector(".product-grid > .item-grid > .item-box:nth-child("+ (index+1) +") .details > div.add-info > div.buttons > button:nth-child(2)"));
+    }
+
+    public WebElement searchResultGetWishListButtonPOM(int index){
+        return driver.findElement(By.cssSelector(".product-grid > .item-grid > .item-box:nth-child("+ (index+1) +") .details > div.add-info > div.buttons > button:nth-child(3)"));
+    }
 }

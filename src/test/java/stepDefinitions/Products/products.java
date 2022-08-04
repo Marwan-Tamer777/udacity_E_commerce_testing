@@ -28,7 +28,7 @@ public class products {
 
     @Before
     public void userOpensBrowser(){
-        //sets the chrome driver to the exe driver downaloded from the chromium porject.
+        //sets the chrome driver to the exe driver downloaded from the chromium project.
         System.setProperty("webdriver.chrome.driver",
                 System.getProperty("user.dir")+"\\resources\\chromedriver.exe");
 
