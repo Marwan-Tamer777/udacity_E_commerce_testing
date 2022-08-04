@@ -1,6 +1,5 @@
 package stepDefinitions.CheckOut;
 
-import gherkin.lexer.Th;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
@@ -97,15 +96,15 @@ public class checkOut {
         }
 
         billingPage.step1ContinueButtonPOM().click();
-        Thread.sleep(1000);
-        billingPage.step3ContinueButtonPOM().click();
-        Thread.sleep(1000);
-        billingPage.step4ContinueButtonPOM().click();
-        Thread.sleep(1000);
-        billingPage.step5ContinueButtonPOM().click();
-        Thread.sleep(1000);
-        billingPage.step6ContinueButtonPOM().click();
         Thread.sleep(2000);
+        billingPage.step3ContinueButtonPOM().click();
+        Thread.sleep(2000);
+        billingPage.step4ContinueButtonPOM().click();
+        Thread.sleep(3000);
+        billingPage.step5ContinueButtonPOM().click();
+        Thread.sleep(5000);
+        billingPage.step6ContinueButtonPOM().click();
+        Thread.sleep(5000);
     }
 
     @Then("check if checkOut was successful")

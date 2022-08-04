@@ -10,9 +10,11 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/java/features/userRegLog.feature",
 
-        glue = "stepDefinitions.UserRegLog"
+        glue = "stepDefinitions.UserRegLog",
+        plugin = { "html:target/cucumber-html-reports/UserRegLog.html"},
+        monochrome = true
 )
 
 
-public class userRegLog {
+public class AuserRegLog {
 }

@@ -9,7 +9,9 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/java/features/products.feature",
 
-        glue = "stepDefinitions.Products"
+        glue = "stepDefinitions.Products",
+        plugin = { "html:target/cucumber-html-reports/products.html"},
+        monochrome = true
 )
 
 public class products {

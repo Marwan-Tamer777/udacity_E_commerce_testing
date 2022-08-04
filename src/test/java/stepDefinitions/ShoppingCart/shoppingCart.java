@@ -1,6 +1,5 @@
 package stepDefinitions.ShoppingCart;
 
-import gherkin.lexer.Th;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
@@ -76,8 +75,10 @@ public class shoppingCart {
 
     @Then("checks last item {string} on shopping cart list")
     public void checksLastItemOnShoppingCartList(String itemName) {
+        System.out.print("Assertion:" + shoppingCartPage.getLastAddedItemName().toLowerCase().trim() + " EXPECTED:" + itemName.toLowerCase().trim()
+        + " BOOL:" + shoppingCartPage.getLastAddedItemName().toLowerCase().trim().contains(itemName.toLowerCase().trim()));
         Assert.assertTrue("the added item to the cart isn't the clicked item",
-                shoppingCartPage.getLastAddedItemName().toLowerCase().trim().contains(itemName.toLowerCase().trim()));
+                shoppingCartPage.getLastAddedItemName().toLowerCase().trim().contains(itemName));
     }
 
     @When("user clicks on add to wish list button")

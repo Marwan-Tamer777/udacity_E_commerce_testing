@@ -9,7 +9,9 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/java/features/checkOut.feature",
 
-        glue = "stepDefinitions.CheckOut"
+        glue = "stepDefinitions.CheckOut",
+        plugin = { "html:target/cucumber-html-reports/checkOut.html"},
+        monochrome = true
 )
 public class checkOut {
 }

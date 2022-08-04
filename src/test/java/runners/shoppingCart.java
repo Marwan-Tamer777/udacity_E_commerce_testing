@@ -9,7 +9,9 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/java/features/shoppingCart.feature",
 
-        glue = "stepDefinitions.ShoppingCart"
+        glue = "stepDefinitions.ShoppingCart",
+        plugin = { "html:target/cucumber-html-reports/shoppingCart.html"},
+        monochrome = true
 )
 public class shoppingCart {
 }
