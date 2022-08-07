@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="47.672">
+    <testcase classname="check out actions" name="SC12- Create successful Order" time="47.469">
+        <system-out><![CDATA[Given Logged User "test77@example.com" "password" navigates to search page..passed
+And user searches for "book" in search and enters...........................passed
+And user clicks on first item search option.................................passed
+When user clicks on add to shopping cart button.............................passed
+And user navigates to shopping cart page....................................passed
+And user clicks the policy checkbox and checkout button.....................passed
+And user inputs billing personal info to checkout country: "Egypt" city: "Cairo" address: "1,ahmed fa7ry" zip code: "11512" phone: "010254681265".passed
+Then check if checkOut was successful.......................................passed
+]]></system-out>
+    </testcase>
+</testsuite>

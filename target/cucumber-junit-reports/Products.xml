@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="5" time="56.812">
+    <testcase classname="user product actions and searching actions" name="SC4- Logged User &quot;test77@example.com&quot; &quot;password&quot; could search for any product" time="10.71">
+        <system-out><![CDATA[Given Logged User "test77@example.com" "password" navigates to search page..passed
+When user searches for "shoes" in search and enters.........................passed
+Then check for any search results...........................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="user product actions and searching actions" name="SC5- Logged User &quot;test77@example.com&quot; &quot;password&quot; could switch between currencies US-Euro" time="8.617">
+        <system-out><![CDATA[Given logged User "test77@example.com" "password" navigates to home page....passed
+When user selects currency "Euro"...........................................passed
+Then check for any item's currency "€"......................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="user product actions and searching actions" name="SC6- Logged user &quot;test77@example.com&quot; &quot;password&quot; could select different Categories" time="9.511">
+        <system-out><![CDATA[Given logged User "test77@example.com" "password" navigates to home page....passed
+When user hovers on category "Electronics"..................................passed
+And clicks on subcategory "Cell Phones".....................................passed
+Then check for current category title "Cell Phones".........................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="user product actions and searching actions" name="SC7- Logged user &quot;test77@example.com&quot; &quot;password&quot; could filter with color" time="14.731">
+        <system-out><![CDATA[Given logged User "test77@example.com" "password" navigates to shoes page...passed
+When user clicks on color selector "Red" radio buttons......................passed
+And user clicks on first item search option.................................passed
+Then check for available color "Red"........................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="user product actions and searching actions" name="SC8- Logged user &quot;test77@example.com&quot; &quot;password&quot; could select different tags" time="12.946">
+        <system-out><![CDATA[Given Logged User "test77@example.com" "password" navigates to search page..passed
+When user clicks on tag "awesome"...........................................passed
+And user clicks on first item search option.................................passed
+Then check for item tags "awesome"..........................................passed
+]]></system-out>
+    </testcase>
+</testsuite>

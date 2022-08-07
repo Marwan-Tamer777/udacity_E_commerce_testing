@@ -10,7 +10,11 @@ import org.junit.runner.RunWith;
         features = "src/test/java/features/shoppingCart.feature",
 
         glue = "stepDefinitions.ShoppingCart",
-        plugin = { "html:target/cucumber-html-reports/shoppingCart.html"},
+        plugin = { "html:target/cucumber-html-reports/ShoppingCart.html",
+                "json:target/cucumber-json-reports/ShoppingCart.json",
+                "junit:target/cucumber-junit-reports/ShoppingCart.xml",
+                "rerun:target/cucumber-text-reports/ShoppingCart.txt"
+        },
         monochrome = true
 )
 public class shoppingCart {

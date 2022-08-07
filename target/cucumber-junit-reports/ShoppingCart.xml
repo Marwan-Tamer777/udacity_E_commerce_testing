@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="3" time="53.943">
+    <testcase classname="Shopping carts actions" name="SC9- Logged user &quot;test77@example.com&quot; &quot;password&quot; could add different products to Shopping cart" time="17.936">
+        <system-out><![CDATA[Given Logged User "test77@example.com" "password" navigates to search page..passed
+And user searches for "pies" in search and enters...........................passed
+And user clicks on first item search option.................................passed
+When user clicks on add to shopping cart button.............................passed
+And user navigates to shopping cart page....................................passed
+Then checks last item "pies" on shopping cart list..........................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Shopping carts actions" name="SC10- Logged user could add different products to Wishlist" time="17.764">
+        <system-out><![CDATA[Given Logged User "test77@example.com" "password" navigates to search page..passed
+And user searches for "book" in search and enters...........................passed
+And user clicks on first item search option.................................passed
+When user clicks on add to wish list button.................................passed
+And user navigates to wish list page........................................passed
+Then checks last item "book" on wish list list..............................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Shopping carts actions" name="SC11- Logged user could add different products to compare list" time="17.974">
+        <system-out><![CDATA[Given Logged User "test77@example.com" "password" navigates to search page..passed
+And user searches for "book" in search and enters...........................passed
+And user clicks on first item search option.................................passed
+When user clicks on add to compare list button..............................passed
+And user navigates to compare list page.....................................passed
+Then checks last item "book" on compare list list...........................passed
+]]></system-out>
+    </testcase>
+</testsuite>

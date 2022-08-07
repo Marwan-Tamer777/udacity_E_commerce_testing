@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="3" time="25.252">
+    <testcase classname="user account actions" name="SC1- User could register with valid data" time="6.793">
+        <system-out><![CDATA[Given user navigates to register page.......................................passed
+When user enters "TESTER4", "ROBOT4", "test77@example.com", "pa@@@ssword" in register inputs.passed
+And user clicks enter button................................................passed
+Then check for valid register message.......................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="user account actions" name="SC2- User could log in with valid email and password" time="9.65">
+        <system-out><![CDATA[Given user navigates to login page..........................................passed
+When user enters valid email "test77@example.com" and password "pa@@@ssword".passed
+Then check if logged in.....................................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="user account actions" name="SC3- User could reset his/her password successfully" time="8.512">
+        <system-out><![CDATA[Given logged user "test77@example.com" "pa@@@ssword" navigates to change password page.passed
+When user enters old password "pa@@@ssword" and new password "password".....passed
+Then check for valid password change flash message..........................passed
+]]></system-out>
+    </testcase>
+</testsuite>

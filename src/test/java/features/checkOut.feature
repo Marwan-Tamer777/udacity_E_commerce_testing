@@ -2,7 +2,7 @@
 Feature: check out actions
 
   Scenario: SC12- Create successful Order
-    Given Logged User "test20@example.com" "password" navigates to search page
+    Given Logged User "test77@example.com" "password" navigates to search page
     And user searches for "book" in search and enters
     And user clicks on first item search option
 

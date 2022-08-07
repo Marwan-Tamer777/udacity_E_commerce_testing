@@ -11,7 +11,11 @@ import org.junit.runner.RunWith;
         features = "src/test/java/features/userRegLog.feature",
 
         glue = "stepDefinitions.UserRegLog",
-        plugin = { "html:target/cucumber-html-reports/UserRegLog.html"},
+        plugin = { "html:target/cucumber-html-reports/UserRegLog.html",
+                "json:target/cucumber-json-reports/UserRegLog.json",
+        "junit:target/cucumber-junit-reports/UserRegLog.xml",
+        "rerun:target/cucumber-text-reports/UserRegLog.txt"
+        },
         monochrome = true
 )
 
